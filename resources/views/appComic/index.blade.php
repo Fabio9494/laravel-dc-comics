@@ -16,6 +16,7 @@
                     </div>
                 @endforeach
             </div>
+            <a href="{{ route('comic.create') }}" class="btn btn-primary mb-3">AGGIUNGI</a>
         </div>
         </div>
     </main>
