@@ -24,7 +24,13 @@
             <img src="/img/adv.jpg" alt="">
         </div>
     </div>
-    <div class="text-center">
-        <a href="{{ route('comic.edit', ['comic' => $comic->id]) }}" class="btn btn-primary mb-3">MODIFICA</a>
+    <div class="d-flex justify-content-center">
+        <a href="{{ route('comic.edit', ['comic' => $comic->id]) }}" class="btn btn-primary mb-3 mx-1">MODIFICA</a>
+        <form action="{{ route('comic.destroy', ['comic' => $comic->id]) }}" method="POST"
+            onsubmit="return confirm('Eliminare questo elemento?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-primary mb-3 mx-1">CANCELLA</button>
+        </form>
     </div>
 @endsection
