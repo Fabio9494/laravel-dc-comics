@@ -92,8 +92,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $form_data = $request->all();
-        
+        //$form_data = $request->all();
+        $form_data = $this->validation($request->all());
         
         
 
